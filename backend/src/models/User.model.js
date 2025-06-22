@@ -21,15 +21,16 @@ const userSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        role: {
-            type: String,
-            enum: ['user', 'provider', 'admin'],
-            default: 'user',
-        },
         phoneNumber: {
             type: String,
             required: true,
             unique: true,
+            trim: true,
+        },
+        role: {
+            type: String,
+            enum: ['user', 'provider', 'admin'],
+            default: 'user',
         },
         location: {
             // GeoJSON for location-based searches
@@ -44,8 +45,10 @@ const userSchema = new mongoose.Schema(
             },
         },
         address: {
-            type: String,
-            trim: true,
+            street: String,
+            city: String,
+            state: String,
+            zip: String,
         },
     },
     { timestamps: true }

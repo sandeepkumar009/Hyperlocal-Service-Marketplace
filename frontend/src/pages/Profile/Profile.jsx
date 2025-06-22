@@ -27,7 +27,7 @@ function Profile() {
                     <p>Email: {user.email}</p>
                     <p>Role: {user.role}</p>
                     <p>Phone Number: {user.phoneNumber}</p>
-                    <p>Address: {user.address}</p>
+                    <p>Address: {user.address ? `${user.address.street}, ${user.address.city}, ${user.address.state}, ${user.address.zip}` : "Not provided"}</p>
                 </div>
             }
         </div>
